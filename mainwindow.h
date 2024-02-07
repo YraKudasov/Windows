@@ -2,6 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPainter>
+#include <QDialog>
+#include <QFormLayout>
+#include <QLineEdit>
+#include <QIntValidator>
+#include <QPushButton>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,5 +23,17 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    int squareLength;
+
+protected:
+    void paintEvent(QPaintEvent*) override;
+
+private slots:
+    void onSquareSelected();
+    void onRectangleSelected();
+    void onTriangleSelected();
+    void onCircleSelected();
+    void onTrapezoidSelected();
 };
+
 #endif // MAINWINDOW_H
